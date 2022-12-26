@@ -1,0 +1,234 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: arial;
+}
+.container{
+	width: 1000px;
+	height: calc(100vh - 50px);
+	margin: 0 auto;
+	position: relative;
+
+}
+.content{
+	display: flex;
+	width: auto;
+	height: 100%;
+    flex-direction: column;
+    border-right: 1px solid rgba(0,0,0,0.18);
+}
+.details{
+	width: 100%;
+	height: auto;
+	display: flex;
+	margin: 50px 0;
+	height: 100%;
+
+
+}
+.btn{
+	width: 100%;
+	height: 40px;
+	cursor: pointer;
+	color: white;
+	background: #333;
+	border-radius: 5px;
+	border: 0;
+}
+.text-field{
+	margin: 20px 20px 10px 20px;
+}
+.content input[type=text]{
+	height: 30px;
+	width: 250px;
+	padding-left: 10px;
+	
+}
+label{
+ width: 100px;
+ height: 100px;
+
+}
+.table-container{
+	width: 100%;
+	height: 100px;
+}
+table{
+	height: auto;
+	width: calc(100% - 60px);
+	margin: 0 30px;
+
+}
+th{
+	background: #333;
+	color: white;
+}
+
+tr{
+	width: 100%;
+	height: 40px;
+	
+}
+td{
+	border: 1px solid #333;
+	text-align: center;
+}
+.span{
+ 	width: 100%;
+ 	height: 35px;
+ 	font-size: 20px;
+ 	display: flex;
+ 	justify-content: center;
+
+}
+.total-val{
+	padding: 20px;
+}
+.nav{
+	display: none;
+}
+.add-btn{
+	display: none;
+}
+.content-mobile-inputbox{
+	display: none;
+}
+@media only screen and (max-width: 800px){
+	.container{
+	width: 100%;
+	height: 100vh !important;
+	margin: 0 0 0 0 !important;
+	
+}
+.mobile-content{
+
+	width: 100%;
+	display: flex;
+	height: 100%;
+}
+
+
+	.pc{
+         display: none;
+	}
+	.nav{
+		top: 0;
+		height: 50px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0 1px 8px -2px #323232;
+		font-size: 10px;
+		position: fixed;
+		color: #333;
+	}
+	.add-btn{
+		height:60px;
+		width: 60px;
+		border-radius: 50%;
+		position: absolute;
+		bottom: 30px; 
+		right: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 40px;
+		color: white;
+		background: #333;
+		font-weight: 100;
+		
+
+	}
+	.content-mobile-inputbox{
+		width:300px;
+		height: 220px;
+		border: 1px solid black;
+		border-radius: 5px;
+		display: grid;
+		grid-template-rows: repeat(3, 70px); 
+		padding-top: 10px;
+		align-self: center;
+		margin: 0 auto;
+		
+
+	}
+	.btn-mobile{
+		width: 100%;
+		height: 70;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.btn-mobile-add{
+	justify-content: flex-end;
+	width: 120px;
+	height: 40px;
+	cursor: pointer;
+	color: white;
+	background: #333;
+	border-radius: 5px;
+	border: 0;
+	margin: 35px;
+}
+fieldset{
+	border: 2px solid rgba(0,0,0,0.8);
+	border-radius: 10px;
+	width: 80%;
+	margin: 10px 25px 0 25px;
+	position: relative;
+
+}
+legend{
+	margin: 0 15px;
+	padding: 5px;
+	font-size: 16px;
+}
+fieldset input[type=text]{
+	margin-top: -50px;
+	width: calc(100% - 20px);
+	height: 30px;
+	border: none;
+	border-radius: 10px;
+	padding-left: 20px;
+	font-size: 15px;
+
+}
+input[type=text]:focus{
+	outline: none;
+}
+.expences-list{
+	width: 100%;
+	height: auto;
+	margin-top: 100px;
+}
+.span-container{
+	width: 200px;
+
+}
+.edit{
+	right: 0;
+	margin-right: -130px; 
+	position: absolute;
+	width: 150px;
+	height: 60px;
+	border: 1px solid #333;
+	justify-content: flex-end;
+}
+
+.list-items{
+	width: calc(100% - 60px);
+	margin: 30px;
+	height: 60px;
+	border: 1px solid black;
+	border-radius: 6px;
+	display: flex;
+	position: relative;
+	overflow: hidden;
+}
+.list-items span{
+	margin: 5px;
+	font-weight: bold;
+	display: block;
+	}
+}

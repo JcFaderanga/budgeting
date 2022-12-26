@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bugeting system</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="budget.css">
+</head>
+
+<body>
+	
+	<header>
+	   <div class="nav">
+	   	<h1> budgeting system</h1>
+	   </div>
+	</header>
+
+<div class="container">
+	
+	<div class="add-btn"> + </div>
+	<div class="mobile-content">
+	   <div class="content-mobile-inputbox" style="display: none;">
+	 	<div class="text-field-mobile">
+
+	 		<fieldset><legend> product name</legend>
+
+		   <input id="product-mobile" type="text" placeholder="Enter product here" required></fieldset>
+			
+	    </div>
+	    <div class="text-field-mobile">
+	    	<fieldset><legend> Price</legend>
+	       <input id="value-mobile" type="text" placeholder="Enter price here" required>
+	       </fieldset>
+	    </div>	
+	    <div class="btn-mobile">  <button class="btn-mobile-add"> Save</button></div>
+	 </div>
+	  <div class="expences-list">
+	    	<div class="list-items">
+	    		<div class="span-container">
+	    			<span id="name">Name: </span>
+	    	     	<span id="price">price: </span>
+	    		</div>
+	    		<div class="edit">
+	    			<<
+	    		</div>
+	    		
+	    	</div>
+	    </div>
+	</div>
+	
+	<div class="pc">
+		<section class="details">
+	<div class="content">
+		<form class="form">
+		<div class="text-field">
+			<span >Product name</span>
+		   <input id="product" type="text" placeholder="Name of product" required>
+	    </div>
+	    <div class="text-field">
+	    	<span >Amount</span>
+	       <input id="value" type="text" placeholder="price" required>
+	    </div>	
+	    <div class="text-field">
+	       <button class="btn"> Save</button>
+	    </div>
+	    </form>
+		
+	</div>
+<div class="table-container">
+	<div class="span">
+		<span id="total-val"></span>
+	</div>
+	
+	<table id="table">
+  <tr>
+  	<th>Name</th>
+  	<th>Price</th>
+  </tr>
+
+</table>
+</div>
+
+</section>
+
+	</div>
+	
+</div>
+
+<script type="text/javascript">
+
+
+let btnAdd = document.querySelector('.btn');
+let table = document.querySelector('table');
+
+let productInput = document.querySelector('#product');
+let valueInput = document.querySelector('#value');
+
+
+btnAdd.addEventListener('click', () => {
+
+    let product = productInput.value;
+    let value = valueInput.value;
+    let template = `
+                <tr>
+                    <td>${product}</td>
+                    <td>${value}</td>
+                </tr>`;
+    table.innerHTML += template;
+document.querySelector('.form').reset();
+sumVal = 0;
+    let add = document.getElementById('table');
+            
+            for(var i = 1; i < add.rows.length; i++)
+            {
+                sumVal += parseInt(add.rows[i].cells[1].innerHTML);
+            }
+            
+            document.getElementById("total-val").innerHTML = "Total = " + sumVal + "php";
+            
+});
+let plusButton;
+let item = document.querySelector('.expences-list');
+document.querySelector('.add-btn').addEventListener('click', () =>{
+
+
+if (plusButton==0) {
+    document.querySelector('.expences-list').style.display="none";
+	document.querySelector('.content-mobile-inputbox').style.display="grid";
+	return plusButton = 1;
+}else{
+	document.querySelector('.expences-list').style.display="block";
+    document.querySelector('.content-mobile-inputbox').style.display="none";
+	return plusButton = 0;
+
+}
+});
+
+let productName = document.querySelector('#product-mobile');
+let productPrice = document.querySelector('#value-mobile');
+document.querySelector('.btn-mobile-add').addEventListener('click',() => {
+document.querySelector('.expences-list').style.display="block";
+ document.querySelector('.content-mobile-inputbox').style.display="none";
+
+
+    let productName1  = productName.value;
+    let productPrice1 = productPrice.value;
+let template = `
+               <div class="list-items">
+	    		<div class="span-container">
+	    			<span id="name">Name:${productName1 }  </span>
+	    	     	<span id="price">price:${productPrice1} </span>
+	    		</div>
+	    		<div class="edit">
+	    			<<
+	    		</div>	
+	    	</div> `;
+    item.innerHTML += template;
+});
+
+document.querySelector('.edit').addEventListener('click', edit);
+
+function edit(){
+	if(plusButton==0){
+		document.querySelector('.edit').style.margin="0 0 0 0";
+		return plusButton= 1;
+	}else{
+		document.querySelector('.edit').style.margin="";
+		return plusButton= 0;
+	}
+	
+}
+</script>
+</body>
+</html>
